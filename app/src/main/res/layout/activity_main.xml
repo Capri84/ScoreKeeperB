@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:columnCount="3"
+                android:columnCount="4"
                 android:orientation="horizontal">
 
                 <Button
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:columnCount="3"
+                android:columnCount="4"
                 android:orientation="horizontal">
 
                 <Button
@@ -196,11 +196,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:onClick="winner"
         android:text="@string/winner"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:onClick="reset"
         android:text="@string/reset"/>
     </LinearLayout>

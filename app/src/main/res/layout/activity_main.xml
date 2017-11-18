@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.scorekeeperb.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/score_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/padding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/player" />
+
+            <TextView
+                android:id="@+id/player_score"
+                style="@style/padding1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/scorea" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="3"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusOnePlayer"
+                    android:text="@string/one" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusTwoPlayer"
+                    android:text="@string/two" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusThreePlayer"
+                    android:text="@string/three" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusFourPlayer"
+                    android:text="@string/four" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusFivePlayer"
+                    android:text="@string/five" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusSixPlayer"
+                    android:text="@string/six" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusSevenPlayer"
+                    android:text="@string/seven" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusEightPlayer"
+                    android:text="@string/eight" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusNinePlayer"
+                    android:text="@string/nine" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusTenPlayer"
+                    android:text="@string/ten" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusElevenPlayer"
+                    android:text="@string/eleven" />
+            </GridLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/padding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/dealer" />
+
+            <TextView
+                android:id="@+id/dealer_score"
+                style="@style/padding1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/scoreb" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="3"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusOneDealer"
+                    android:text="@string/one" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusTwoDealer"
+                    android:text="@string/two" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusThreeDealer"
+                    android:text="@string/three" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusFourDealer"
+                    android:text="@string/four" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusFiveDealer"
+                    android:text="@string/five" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusSixDealer"
+                    android:text="@string/six" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusSevenDealer"
+                    android:text="@string/seven" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusEightDealer"
+                    android:text="@string/eight" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusNineDealer"
+                    android:text="@string/nine" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusTenDealer"
+                    android:text="@string/ten" />
+                <Button
+                    style="@style/buttons"
+                    android:onClick="plusElevenDealer"
+                    android:text="@string/eleven" />
+            </GridLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/score_count"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        style="@style/text"
+        android:text=""/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        style="@style/margin1">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="winner"
+        android:text="@string/winner"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="reset"
+        android:text="@string/reset"/>
+    </LinearLayout>
+</RelativeLayout>

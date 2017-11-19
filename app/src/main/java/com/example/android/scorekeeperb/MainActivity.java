@@ -21,7 +21,69 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            scorePlayer = savedInstanceState.getInt("scorePlayer");
+            scoreDealer = savedInstanceState.getInt("scoreDealer");
+            winner = savedInstanceState.getString("winner");
+            winner1 = savedInstanceState.getString("winner1");
+            loser = savedInstanceState.getString("loser");
+            bothLost = savedInstanceState.getString("bothLost");
+            bothWon = savedInstanceState.getString("bothWon");
+            draw = savedInstanceState.getString("draw");
+        }
         setContentView(R.layout.activity_main);
+        displayForPlayer(scorePlayer);
+        displayForDealer(scoreDealer);
+        if (scorePlayer > scoreDealer && scorePlayer < 21) {
+            displayMessage(winner);
+        }
+        if (scorePlayer == 21) {
+            displayMessage(winner1);
+        }
+        if (scorePlayer < scoreDealer && scoreDealer > 21 && scorePlayer < 21) {
+            displayMessage(winner);
+        }
+        if (scorePlayer > scoreDealer && scoreDealer == 21) {
+            displayMessage(loser);
+        }
+        if (scorePlayer < scoreDealer && scoreDealer <= 21) {
+            displayMessage(loser);
+        }
+        if (scorePlayer > scoreDealer && scorePlayer > 21) {
+            displayMessage(loser);
+        }
+        if (scorePlayer > 21 && scoreDealer > 21) {
+            displayMessage(bothLost);
+        }
+        if (scorePlayer == scoreDealer && scorePlayer == 21) {
+            displayMessage(bothWon);
+        }
+        if (scorePlayer == scoreDealer && scorePlayer < 21) {
+            displayMessage(draw);
+        }
+    }
+
+    /**
+     * This method saves the current state of the data.
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("scorePlayer", scorePlayer);
+        outState.putInt("scoreDealer", scoreDealer);
+        outState.putString("winner", winner);
+        outState.putString("loser", loser);
+        outState.putString("draw", draw);
+        outState.putString("bothLost", bothLost);
+        outState.putString("bothWon", bothWon);
+        outState.putString("winner1", winner1);
+    }
+
+    public boolean dealer17() {
+        if (scoreDealer >= 17 && scoreDealer <= 21) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -140,10 +202,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+1" button for Dealer is clicked.
      */
     public void plusOneDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 1;}
+        } else {
+            scoreDealer = scoreDealer + 1;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -151,10 +214,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+2" button for Dealer is clicked.
      */
     public void plusTwoDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 2;}
+        } else {
+            scoreDealer = scoreDealer + 2;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -162,10 +226,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+3" button for Dealer is clicked.
      */
     public void plusThreeDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 3;}
+        } else {
+            scoreDealer = scoreDealer + 3;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -173,10 +238,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+4" button for Dealer is clicked.
      */
     public void plusFourDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 4;}
+        } else {
+            scoreDealer = scoreDealer + 4;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -184,10 +250,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+5" button for Dealer is clicked.
      */
     public void plusFiveDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 5;}
+        } else {
+            scoreDealer = scoreDealer + 5;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -195,10 +262,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+6" button for Dealer is clicked.
      */
     public void plusSixDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 6;}
+        } else {
+            scoreDealer = scoreDealer + 6;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -206,10 +274,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+7" button for Dealer is clicked.
      */
     public void plusSevenDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 7;}
+        } else {
+            scoreDealer = scoreDealer + 7;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -217,10 +286,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+8" button for Dealer is clicked.
      */
     public void plusEightDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 8;}
+        } else {
+            scoreDealer = scoreDealer + 8;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -228,10 +298,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+9" button for Dealer is clicked.
      */
     public void plusNineDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 9;}
+        } else {
+            scoreDealer = scoreDealer + 9;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -239,10 +310,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+10" button for Dealer is clicked.
      */
     public void plusTenDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-            scoreDealer = scoreDealer + 10;}
+        } else {
+            scoreDealer = scoreDealer + 10;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -250,10 +322,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the "+11" button for Dealer is clicked.
      */
     public void plusElevenDealer(View view) {
-        if (scoreDealer >= 17 && scoreDealer <= 21) {
+        if (dealer17()) {
             return;
-        } else{
-        scoreDealer = scoreDealer + 11;}
+        } else {
+            scoreDealer = scoreDealer + 11;
+        }
         displayForDealer(scoreDealer);
     }
 
@@ -268,25 +341,35 @@ public class MainActivity extends AppCompatActivity {
         draw = "Draw! Press Reset \nand start again!";
         bothLost = "Both Player and Dealer lose!";
         bothWon = "BlackJack! Both Player and Dealer win!";
-        if (scorePlayer > scoreDealer && scorePlayer < 21)
-        {displayMessage(winner);}
-        if (scorePlayer == 21)
-        {displayMessage(winner1);}
-        if (scorePlayer < scoreDealer && scoreDealer > 21 && scorePlayer < 21)
-        {displayMessage(winner);}
-        if (scorePlayer > scoreDealer && scoreDealer == 21)
-        {displayMessage(loser);}
-        if (scorePlayer < scoreDealer && scoreDealer <= 21)
-        {displayMessage(loser);}
-        if (scorePlayer > scoreDealer && scorePlayer > 21)
-        {displayMessage(loser);}
-        if (scorePlayer > 21 && scoreDealer > 21)
-        {displayMessage(bothLost);}
-        if (scorePlayer == scoreDealer && scorePlayer == 21)
-        {displayMessage(bothWon);}
-        if (scorePlayer == scoreDealer && scorePlayer < 21)
-        {displayMessage(draw);}
+        if (scorePlayer > scoreDealer && scorePlayer < 21) {
+            displayMessage(winner);
+        }
+        if (scorePlayer == 21) {
+            displayMessage(winner1);
+        }
+        if (scorePlayer < scoreDealer && scoreDealer > 21 && scorePlayer < 21) {
+            displayMessage(winner);
+        }
+        if (scorePlayer > scoreDealer && scoreDealer == 21) {
+            displayMessage(loser);
+        }
+        if (scorePlayer < scoreDealer && scoreDealer <= 21) {
+            displayMessage(loser);
+        }
+        if (scorePlayer > scoreDealer && scorePlayer > 21) {
+            displayMessage(loser);
+        }
+        if (scorePlayer > 21 && scoreDealer > 21) {
+            displayMessage(bothLost);
+        }
+        if (scorePlayer == scoreDealer && scorePlayer == 21) {
+            displayMessage(bothWon);
+        }
+        if (scorePlayer == scoreDealer && scorePlayer < 21) {
+            displayMessage(draw);
+        }
     }
+
     /**
      * This method is called when the "Reset" button is clicked.
      * It resets the score for both players back to 0 and clears messages.
@@ -297,9 +380,9 @@ public class MainActivity extends AppCompatActivity {
         winner = "";
         winner1 = "";
         loser = "";
-        draw="";
-        bothLost="";
-        bothWon="";
+        draw = "";
+        bothLost = "";
+        bothWon = "";
         displayForPlayer(scorePlayer);
         displayForDealer(scoreDealer);
         displayMessage(winner);

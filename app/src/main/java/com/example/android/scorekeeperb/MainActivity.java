@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     String bothLost = "";
     String bothWon = "";
     String winner1 = "";
+    String textResult = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +25,21 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             scorePlayer = savedInstanceState.getInt("scorePlayer");
             scoreDealer = savedInstanceState.getInt("scoreDealer");
-            winner = savedInstanceState.getString("winner");
+            textResult = savedInstanceState.getString("textResult");
+          /**  winner = savedInstanceState.getString("winner");
             winner1 = savedInstanceState.getString("winner1");
             loser = savedInstanceState.getString("loser");
             bothLost = savedInstanceState.getString("bothLost");
             bothWon = savedInstanceState.getString("bothWon");
             draw = savedInstanceState.getString("draw");
+           */
         }
         setContentView(R.layout.activity_main);
         displayForPlayer(scorePlayer);
         displayForDealer(scoreDealer);
-        if (scorePlayer > scoreDealer && scorePlayer < 21) {
+        displayMessage(textResult);
+        /**
+         *  if (scorePlayer > scoreDealer && scorePlayer < 21) {
             displayMessage(winner);
         }
         if (scorePlayer == 21) {
@@ -61,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         if (scorePlayer == scoreDealer && scorePlayer < 21) {
             displayMessage(draw);
         }
+        */
     }
 
     /**
@@ -71,14 +77,30 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putInt("scorePlayer", scorePlayer);
         outState.putInt("scoreDealer", scoreDealer);
-        outState.putString("winner", winner);
+        outState.putString("textResult", textResult);
+        /**outState.putString("winner", winner);
         outState.putString("loser", loser);
         outState.putString("draw", draw);
         outState.putString("bothLost", bothLost);
         outState.putString("bothWon", bothWon);
         outState.putString("winner1", winner1);
+         */
     }
 
+    /**
+     * This method restores saved state of the data.
+     */
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scorePlayer = savedInstanceState.getInt("scorePlayer");
+        scoreDealer = savedInstanceState.getInt("scoreDealer");
+        textResult = savedInstanceState.getString("textResult");
+    }
+
+    /**
+     * This method determines whether or not the condition stated in it is satisfied.
+     */
     public boolean dealer17() {
         if (scoreDealer >= 17 && scoreDealer <= 21) {
             return true;
@@ -342,31 +364,49 @@ public class MainActivity extends AppCompatActivity {
         bothLost = "Both Player and Dealer lose!";
         bothWon = "BlackJack! Both Player and Dealer win!";
         if (scorePlayer > scoreDealer && scorePlayer < 21) {
-            displayMessage(winner);
+            textResult = winner;
+            displayMessage(textResult);
+            //displayMessage(winner);
         }
         if (scorePlayer == 21) {
-            displayMessage(winner1);
+            textResult = winner1;
+            displayMessage(textResult);
+            //displayMessage(winner1);
         }
         if (scorePlayer < scoreDealer && scoreDealer > 21 && scorePlayer < 21) {
-            displayMessage(winner);
+            textResult = winner;
+            displayMessage(textResult);
+            //displayMessage(winner);
         }
         if (scorePlayer > scoreDealer && scoreDealer == 21) {
-            displayMessage(loser);
+            textResult = loser;
+            displayMessage(textResult);
+           // displayMessage(loser);
         }
         if (scorePlayer < scoreDealer && scoreDealer <= 21) {
-            displayMessage(loser);
+            textResult = loser;
+            displayMessage(textResult);
+            //displayMessage(loser);
         }
         if (scorePlayer > scoreDealer && scorePlayer > 21) {
-            displayMessage(loser);
+            textResult = loser;
+            displayMessage(textResult);
+            //displayMessage(loser);
         }
         if (scorePlayer > 21 && scoreDealer > 21) {
-            displayMessage(bothLost);
+            textResult = bothLost;
+            displayMessage(textResult);
+           // displayMessage(bothLost);
         }
         if (scorePlayer == scoreDealer && scorePlayer == 21) {
-            displayMessage(bothWon);
+            textResult = bothWon;
+            displayMessage(textResult);
+           // displayMessage(bothWon);
         }
         if (scorePlayer == scoreDealer && scorePlayer < 21) {
-            displayMessage(draw);
+            textResult = draw;
+            displayMessage(textResult);
+           // displayMessage(draw);
         }
     }
 
@@ -377,20 +417,22 @@ public class MainActivity extends AppCompatActivity {
     public void reset(View view) {
         scorePlayer = 0;
         scoreDealer = 0;
-        winner = "";
-        winner1 = "";
-        loser = "";
-        draw = "";
-        bothLost = "";
-        bothWon = "";
+      // winner = "";
+      //  winner1 = "";
+      //  loser = "";
+      //  draw = "";
+      //  bothLost = "";
+      //  bothWon = "";
+        textResult = "";
         displayForPlayer(scorePlayer);
         displayForDealer(scoreDealer);
-        displayMessage(winner);
+        displayMessage(textResult);
+        /**displayMessage(winner);
         displayMessage(loser);
         displayMessage(draw);
         displayMessage(bothLost);
         displayMessage(bothWon);
         displayMessage(winner1);
+         */
     }
 }
-

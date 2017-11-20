@@ -22,85 +22,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            scorePlayer = savedInstanceState.getInt("scorePlayer");
-            scoreDealer = savedInstanceState.getInt("scoreDealer");
-            textResult = savedInstanceState.getString("textResult");
-          /**  winner = savedInstanceState.getString("winner");
-            winner1 = savedInstanceState.getString("winner1");
-            loser = savedInstanceState.getString("loser");
-            bothLost = savedInstanceState.getString("bothLost");
-            bothWon = savedInstanceState.getString("bothWon");
-            draw = savedInstanceState.getString("draw");
-           */
-        }
         setContentView(R.layout.activity_main);
-        displayForPlayer(scorePlayer);
-        displayForDealer(scoreDealer);
-        displayMessage(textResult);
-        /**
-         *  if (scorePlayer > scoreDealer && scorePlayer < 21) {
-            displayMessage(winner);
-        }
-        if (scorePlayer == 21) {
-            displayMessage(winner1);
-        }
-        if (scorePlayer < scoreDealer && scoreDealer > 21 && scorePlayer < 21) {
-            displayMessage(winner);
-        }
-        if (scorePlayer > scoreDealer && scoreDealer == 21) {
-            displayMessage(loser);
-        }
-        if (scorePlayer < scoreDealer && scoreDealer <= 21) {
-            displayMessage(loser);
-        }
-        if (scorePlayer > scoreDealer && scorePlayer > 21) {
-            displayMessage(loser);
-        }
-        if (scorePlayer > 21 && scoreDealer > 21) {
-            displayMessage(bothLost);
-        }
-        if (scorePlayer == scoreDealer && scorePlayer == 21) {
-            displayMessage(bothWon);
-        }
-        if (scorePlayer == scoreDealer && scorePlayer < 21) {
-            displayMessage(draw);
-        }
-        */
     }
 
-    /**
-     * This method saves the current state of the data.
-     */
+    // This method saves the current state of the data.
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("scorePlayer", scorePlayer);
         outState.putInt("scoreDealer", scoreDealer);
         outState.putString("textResult", textResult);
-        /**outState.putString("winner", winner);
-        outState.putString("loser", loser);
-        outState.putString("draw", draw);
-        outState.putString("bothLost", bothLost);
-        outState.putString("bothWon", bothWon);
-        outState.putString("winner1", winner1);
-         */
     }
 
-    /**
-     * This method restores saved state of the data.
-     */
+    // This method restores saved state of the data.
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         scorePlayer = savedInstanceState.getInt("scorePlayer");
         scoreDealer = savedInstanceState.getInt("scoreDealer");
         textResult = savedInstanceState.getString("textResult");
+        displayForPlayer(scorePlayer);
+        displayForDealer(scoreDealer);
+        displayMessage(textResult);
     }
 
-    /**
-     * This method determines whether or not the condition stated in it is satisfied.
-     */
+    // This method determines whether or not the condition stated in it is satisfied.
     public boolean dealer17() {
         if (scoreDealer >= 17 && scoreDealer <= 21) {
             return true;
@@ -108,121 +54,91 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    /**
-     * Displays the given score for the Player.
-     */
+    // Displays the given score for the Player.
     public void displayForPlayer(int score) {
         TextView scoreView = findViewById(R.id.player_score);
         scoreView.setText(String.valueOf(score));
     }
 
-    /**
-     * Displays the given score for the Dealer.
-     */
+    // Displays the given score for the Dealer.
     public void displayForDealer(int score) {
         TextView scoreView = findViewById(R.id.dealer_score);
         scoreView.setText(String.valueOf(score));
     }
 
-    /**
-     * This method displays the given text on the screen.
-     */
+    // This method displays the given text on the screen.
     private void displayMessage(String message) {
         TextView priceTextView = findViewById(R.id.result);
         priceTextView.setText(message);
     }
 
-    /**
-     * This method is called when the "+1" button for Player is clicked.
-     */
+    // This method is called when the "+1" button for Player is clicked.
     public void plusOnePlayer(View view) {
         scorePlayer = scorePlayer + 1;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+2" button for Player is clicked.
-     */
+    // This method is called when the "+2" button for Player is clicked.
     public void plusTwoPlayer(View view) {
         scorePlayer = scorePlayer + 2;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+3" button for Player is clicked.
-     */
+    // This method is called when the "+3" button for Player is clicked.
     public void plusThreePlayer(View view) {
         scorePlayer = scorePlayer + 3;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+4" button for Player is clicked.
-     */
+    // This method is called when the "+4" button for Player is clicked.
     public void plusFourPlayer(View view) {
         scorePlayer = scorePlayer + 4;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+5" button for Player is clicked.
-     */
+    // This method is called when the "+5" button for Player is clicked.
     public void plusFivePlayer(View view) {
         scorePlayer = scorePlayer + 5;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+6" button for Player is clicked.
-     */
+    // This method is called when the "+6" button for Player is clicked.
     public void plusSixPlayer(View view) {
         scorePlayer = scorePlayer + 6;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+7" button for Player is clicked.
-     */
+    // This method is called when the "+7" button for Player is clicked.
     public void plusSevenPlayer(View view) {
         scorePlayer = scorePlayer + 7;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+8" button for Player is clicked.
-     */
+    // This method is called when the "+8" button for Player is clicked.
     public void plusEightPlayer(View view) {
         scorePlayer = scorePlayer + 8;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+9" button for Player is clicked.
-     */
+    // This method is called when the "+9" button for Player is clicked.
     public void plusNinePlayer(View view) {
         scorePlayer = scorePlayer + 9;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+10" button for Player is clicked.
-     */
+    // This method is called when the "+10" button for Player is clicked.
     public void plusTenPlayer(View view) {
         scorePlayer = scorePlayer + 10;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+11" button for Player is clicked.
-     */
+    // This method is called when the "+11" button for Player is clicked.
     public void plusElevenPlayer(View view) {
         scorePlayer = scorePlayer + 11;
         displayForPlayer(scorePlayer);
     }
 
-    /**
-     * This method is called when the "+1" button for Dealer is clicked.
-     */
+    // This method is called when the "+1" button for Dealer is clicked.
     public void plusOneDealer(View view) {
         if (dealer17()) {
             return;
@@ -232,9 +148,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+2" button for Dealer is clicked.
-     */
+    // This method is called when the "+2" button for Dealer is clicked.
     public void plusTwoDealer(View view) {
         if (dealer17()) {
             return;
@@ -244,9 +158,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+3" button for Dealer is clicked.
-     */
+    // This method is called when the "+3" button for Dealer is clicked.
     public void plusThreeDealer(View view) {
         if (dealer17()) {
             return;
@@ -256,9 +168,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+4" button for Dealer is clicked.
-     */
+    // This method is called when the "+4" button for Dealer is clicked.
     public void plusFourDealer(View view) {
         if (dealer17()) {
             return;
@@ -268,9 +178,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+5" button for Dealer is clicked.
-     */
+    // This method is called when the "+5" button for Dealer is clicked.
     public void plusFiveDealer(View view) {
         if (dealer17()) {
             return;
@@ -280,9 +188,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+6" button for Dealer is clicked.
-     */
+    // This method is called when the "+6" button for Dealer is clicked.
     public void plusSixDealer(View view) {
         if (dealer17()) {
             return;
@@ -292,9 +198,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+7" button for Dealer is clicked.
-     */
+    // This method is called when the "+7" button for Dealer is clicked.
     public void plusSevenDealer(View view) {
         if (dealer17()) {
             return;
@@ -304,9 +208,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+8" button for Dealer is clicked.
-     */
+    // This method is called when the "+8" button for Dealer is clicked.
     public void plusEightDealer(View view) {
         if (dealer17()) {
             return;
@@ -316,9 +218,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+9" button for Dealer is clicked.
-     */
+    // This method is called when the "+9" button for Dealer is clicked.
     public void plusNineDealer(View view) {
         if (dealer17()) {
             return;
@@ -328,9 +228,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+10" button for Dealer is clicked.
-     */
+    // This method is called when the "+10" button for Dealer is clicked.
     public void plusTenDealer(View view) {
         if (dealer17()) {
             return;
@@ -340,9 +238,7 @@ public class MainActivity extends AppCompatActivity {
         displayForDealer(scoreDealer);
     }
 
-    /**
-     * This method is called when the "+11" button for Dealer is clicked.
-     */
+    // This method is called when the "+11" button for Dealer is clicked.
     public void plusElevenDealer(View view) {
         if (dealer17()) {
             return;
@@ -366,47 +262,38 @@ public class MainActivity extends AppCompatActivity {
         if (scorePlayer > scoreDealer && scorePlayer < 21) {
             textResult = winner;
             displayMessage(textResult);
-            //displayMessage(winner);
         }
         if (scorePlayer == 21) {
             textResult = winner1;
             displayMessage(textResult);
-            //displayMessage(winner1);
         }
         if (scorePlayer < scoreDealer && scoreDealer > 21 && scorePlayer < 21) {
             textResult = winner;
             displayMessage(textResult);
-            //displayMessage(winner);
         }
         if (scorePlayer > scoreDealer && scoreDealer == 21) {
             textResult = loser;
             displayMessage(textResult);
-           // displayMessage(loser);
         }
         if (scorePlayer < scoreDealer && scoreDealer <= 21) {
             textResult = loser;
             displayMessage(textResult);
-            //displayMessage(loser);
         }
         if (scorePlayer > scoreDealer && scorePlayer > 21) {
             textResult = loser;
             displayMessage(textResult);
-            //displayMessage(loser);
         }
         if (scorePlayer > 21 && scoreDealer > 21) {
             textResult = bothLost;
             displayMessage(textResult);
-           // displayMessage(bothLost);
         }
         if (scorePlayer == scoreDealer && scorePlayer == 21) {
             textResult = bothWon;
             displayMessage(textResult);
-           // displayMessage(bothWon);
         }
         if (scorePlayer == scoreDealer && scorePlayer < 21) {
             textResult = draw;
             displayMessage(textResult);
-           // displayMessage(draw);
         }
     }
 
@@ -417,22 +304,9 @@ public class MainActivity extends AppCompatActivity {
     public void reset(View view) {
         scorePlayer = 0;
         scoreDealer = 0;
-      // winner = "";
-      //  winner1 = "";
-      //  loser = "";
-      //  draw = "";
-      //  bothLost = "";
-      //  bothWon = "";
         textResult = "";
         displayForPlayer(scorePlayer);
         displayForDealer(scoreDealer);
         displayMessage(textResult);
-        /**displayMessage(winner);
-        displayMessage(loser);
-        displayMessage(draw);
-        displayMessage(bothLost);
-        displayMessage(bothWon);
-        displayMessage(winner1);
-         */
     }
 }

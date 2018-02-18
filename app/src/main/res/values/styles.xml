@@ -12,7 +12,7 @@
     <style name="padding">
         <item name="android:paddingTop">16dp</item>
         <item name="android:textSize">32sp</item>
-        <item name="android:textColor">#FF9800</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:fontFamily">cursive</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -21,7 +21,7 @@
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingBottom">24dp</item>
         <item name="android:textSize">56sp</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">#D50000</item>
         <item name="android:fontFamily">cursive</item>
     </style>
 
